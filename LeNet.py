@@ -1,6 +1,7 @@
 import tensorflow as tf
 import numpy as np
 from tensorflow.examples.tutorials.mnist import input_data
+from layer import *
 
 mnist = input_data.read_data_sets('MNIST_data', one_hot=True)
 
@@ -14,22 +15,6 @@ mnist = input_data.read_data_sets('MNIST_data', one_hot=True)
 #     else:
 #         output = activation_function(z)
 #     return output
-
-
-def conv2d_biased_layer(input, filter, bias, padding):
-    output = tf.nn.conv2d(input, filter, strides=[1, 1, 1, 1], padding=padding)
-    return tf.nn.relu(output + bias)
-    # Note: output has shape [?, x, x, y] while bias has shape [y]. The addition works because tensorflow has inbuilt
-    # broadcasting for addition operations
-
-
-def pool_layer(input, window_size, padding):
-    window_shape = [1, window_size, window_size, 1]
-    return tf.nn.max_pool(input, ksize=window_shape, strides=window_shape, padding=padding)
-
-
-def make_w_and_b(input_size):
-    return tf.Variable(tf.random_normal(input_size, stddev=0.1)), tf.Variable(tf.zeros(input_size[-1]) + 0.1)
 
 
 class CNN:
