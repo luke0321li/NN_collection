@@ -1,7 +1,8 @@
-# LeNet_tf
-The classic <a href="http://yann.lecun.com/exdb/lenet/">LeNet</a> architecture, using tensorflow. MNIST data also included.
+# NN_collection
+A collection of Neural Network architectures. MNIST data also included.
 
-## Notes
+## LeNet
+The classic <a href="http://yann.lecun.com/exdb/lenet/">LeNet</a> architecture, using tensorflow. 
 The layer organization is:
 - A 5x5 convolutional layer, from 1 to 6 channels
 - A pooling layer reducing the image size by half
