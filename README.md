@@ -24,5 +24,5 @@ The layer organization is:
 - A final fully connected layer from 100 to 784 nodes
 
 
-### Variational Autoencoder (VAE)
+## Variational Autoencoder (VAE)
 Same as AE but the latent representation now comes in the form of a mean vector and a standard deviation vector (of a multidimensional gaussian with diagonal covariance matrix)
