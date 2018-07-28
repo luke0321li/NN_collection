@@ -25,4 +25,13 @@ The layer organization is:
 
 
 ## Variational Autoencoder (VAE)
-Same as AE but the latent representation now comes in the form of a mean vector and a standard deviation vector (of a multidimensional gaussian with diagonal covariance matrix)
+Like the AE but the latent representation now comes in the form of a mean vector and a standard deviation vector (of a multidimensional gaussian with diagonal covariance matrix)
+### Encoder
+- A 784->784 fully connected layer
+- Another fully connected layer creating k-dimensional mean and standard deviation vectors
+### Sampler
+- Draws a batch of samples (k-dimensional vectors) from a multidimensional gaussian with the above generated mean and standard deviation
+### Decoder
+- A k->784 fully connected layer
+- Another 784->784 fully connected layer to recreate the samples
+
