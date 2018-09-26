@@ -2,7 +2,7 @@ import tensorflow as tf
 import numpy as np
 import matplotlib.pyplot as plt
 from tensorflow.examples.tutorials.mnist import input_data
-from layer import *
+from common.layer import *
 
 mnist = input_data.read_data_sets('MNIST_data', one_hot=True)
 
@@ -78,11 +78,11 @@ class VAE:
             # Randomly generate some samples
             for i in range(10):
                 test_sample = self.output_flat.eval(
-                    feed_dict={self.sample: 2.0 * np.random.rand(self.batch_size, self.compress_dim) - 1.0})[0].reshape([28, 28])
+                    feed_dict={self.sample: np.random.normal(0, 1, (self.batch_size, self.compress_dim))})[0].reshape([28, 28])
                 plt.gray()
                 plt.imshow((test_sample * 255).astype(np.uint8), interpolation='nearest')
                 plt.show()
 
 
-VAE = VAE(100, 0.001, 1000, 15)
+VAE = VAE(100, 0.001, 10000, 50)
 VAE.train_mnist()

@@ -19,9 +19,11 @@ def pool_layer(input, window_size, padding):
     return tf.nn.max_pool(input, ksize=window_shape, strides=window_shape, padding=padding)
 
 
-def make_w_and_b(input_size):
-    return tf.Variable(tf.random_normal(input_size, stddev=0.05)), tf.Variable(tf.random_normal([input_size[-1]], stddev=0.1))
+def make_w_and_b(shape, w_stdev=0.05, b_stdev=0.1):
+    return tf.Variable(tf.random_normal(shape, stddev=w_stdev)), tf.Variable(
+        tf.random_normal([shape[-1]], stddev=b_stdev))
 
 
-def make_w_and_b_deconv(input_size):
-    return tf.Variable(tf.random_normal(input_size, stddev=0.05)), tf.Variable(tf.random_normal([input_size[-2]], stddev=0.1))
+def make_w_and_b_deconv(shape, w_stdev=0.05, b_stdev=0.1):
+    return tf.Variable(tf.random_normal(shape, stddev=w_stdev)), tf.Variable(
+        tf.random_normal([shape[-2]], stddev=b_stdev))

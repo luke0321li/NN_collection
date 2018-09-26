@@ -2,7 +2,7 @@ import tensorflow as tf
 import numpy as np
 import matplotlib.pyplot as plt
 from tensorflow.examples.tutorials.mnist import input_data
-from layer import *
+from common.layer import *
 
 mnist = input_data.read_data_sets('MNIST_data', one_hot=True)
 
