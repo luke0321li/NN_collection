@@ -18,7 +18,7 @@ mnist = input_data.read_data_sets('MNIST_data', one_hot=True)
 
 
 class CNN:
-    def __init__(self, batch_size, learning_rate, iterations):
+    def __init__(self, batch_size=20, learning_rate=10e-3, iterations=1000):
         self.batch_size = batch_size
         self.learning_rate = learning_rate
         self.iterations = iterations
@@ -84,5 +84,6 @@ class CNN:
             print(final_accuracy)
 
 
-CNN = CNN(50, 0.01, 1000)
-CNN.train_mnist()
+if __name__ == '__main__':
+    CNN = CNN(50, 0.01, 1000)
+    CNN.train_mnist()

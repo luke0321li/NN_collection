@@ -8,7 +8,7 @@ mnist = input_data.read_data_sets('MNIST_data', one_hot=True)
 
 
 class AE:
-    def __init__(self, batch_size, learning_rate, iterations, compress_dim):
+    def __init__(self, batch_size=20, learning_rate=10e-3, iterations=1000, compress_dim=10):
         self.batch_size = batch_size
         self.learning_rate = learning_rate
         self.iterations = iterations
@@ -60,5 +60,6 @@ class AE:
                     plt.show()
 
 
-AE = AE(100, 0.01, 10000, 10)
-AE.train_mnist()
+if __name__ == '__main__':
+    AE = AE(100, 0.01, 10000, 10)
+    AE.train_mnist()
