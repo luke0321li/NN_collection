@@ -35,3 +35,6 @@ Like the AE but the latent representation now comes in the form of a mean vector
 - A k->784 fully connected layer
 - Another 784->784 fully connected layer to recreate the samples
 
+
+## Neural Arithmetic Logic Unit (NALU)
+Capable of learning simple arithmetic expressions and "generalize to numbers that are several orders of magnitude larger than those observed during training", described in <a href="https://arxiv.org/abs/1808.00508">this paper</a>
